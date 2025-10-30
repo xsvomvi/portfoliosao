@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+/* Subtiele pop voor letters*/
+@keyframes popLetter {
+  0% { opacity: 0; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.pop-letter, .pop-logo {
+  display: inline-block;
+  opacity: 0; /* start onzichtbaar */
+  animation: popLetter 0.3s ease forwards;
+}
