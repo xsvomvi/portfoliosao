@@ -8,21 +8,21 @@ const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: "400" });
 
 export default function Header() {
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center h-screen bg-[#f5f5f5]">
       
       {/* Logo met pop */}
-        <div
-          className="w-[70px] sm:w-[90px] md:w-[110px] lg:w-[140px] pop-logo"
-          style={{ animationDelay: `0.2s` }}
-        >
-          <Image
-            src="/star_logo.png"
-            alt="Star Logo"
-            width={128}
-            height={128}
-            className="w-full h-auto"
-          />
-        </div>
+      <div
+        className="w-[70px] sm:w-[90px] md:w-[110px] lg:w-[130px] pop-logo"
+        style={{ animationDelay: `0.2s` }}
+      >
+        <Image
+          src="/star_logo.png"
+          alt="Star Logo"
+          width={130}
+          height={130}
+          className="w-full h-auto"
+        />
+      </div>
 
       {/* Naam */}
       <h3
