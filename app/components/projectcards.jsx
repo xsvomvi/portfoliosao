@@ -64,7 +64,8 @@ export default function ProjectCards({ title, description, image, link }) {
         </p>
 
         <Link href={link}>
-          <button className="flex justify-center items-center gap-4 lg:gap-6 px-6 py-2 border border-black rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer mt-15">
+          <button className="flex flex-wrap justify-center items-center gap-4 lg:gap-6 rounded-full px-6 py-3 block w-[186px] text-center border border-black py-2 px-3 rounded-md
+                         transition-transform duration-500 transform hover:scale-105 mt-15 cursor-pointer">
             view project
           </button>
         </Link>
