@@ -3,14 +3,14 @@
     "id": 1,
     "title": "WEBSITE FOR ICHI",
     "description": "designing a website for café ichi.",
-    "image": "/images/project_ichi.png",
+    "image": "/images/project_ichi.svg",
     "link": "/projects/website-for-ichi"
   },
   {
     "id": 2,
     "title": "FRIENDS WITH BENEFITS",
     "description": "making a boardgame with technical implementations.",
-    "image": "/images/project_fwb.png",
+    "image": "/images/project_fwb.svg",
     "link": "/projects/friends-with-benefits"
   }
 ]

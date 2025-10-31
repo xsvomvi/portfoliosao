@@ -16,7 +16,7 @@ export default function Header() {
         style={{ animationDelay: `0.2s` }}
       >
         <Image
-          src="/star_logo.png"
+          src="/star_logo.svg"
           alt="Star Logo"
           width={130}
           height={130}

@@ -3,6 +3,7 @@
 import Navbar from "./components/navbar";
 import Header from "./components/header";
 import Projects from "./components/projects";
+import Skills from "./components/skills";
 import { Fugaz_One, Homemade_Apple } from "next/font/google";
 import { useRef, useState, useEffect } from "react";
 
@@ -53,6 +54,8 @@ export default function Home() {
       >
         <h2 className="max-w-[800px] text-2xl md:text-4xl font-bold mb-4">i want to keep expanding my creative urges, such as experimenting with different media.</h2>
       </section>
+
+      <Skills />
     </>
   );
 }

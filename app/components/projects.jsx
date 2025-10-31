@@ -57,7 +57,7 @@ export default function Projects() {
           style={{ animationDelay: "0.2s" }}
         >
           <Image
-            src="/star_sticker.png"
+            src="/star_sticker.svg"
             alt="Star Sticker"
             width={200}
             height={200}
