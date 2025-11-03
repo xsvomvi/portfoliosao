@@ -8,7 +8,7 @@ import { Fugaz_One, Homemade_Apple } from "next/font/google";
 const fugazOne = Fugaz_One({ subsets: ["latin"], weight: "400" });
 const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: "400" });
 
-// Button labels
+// Knoppen
 const skillButtons = [
   "photography & video editing",
   "web design & ui/ux design",
@@ -36,11 +36,11 @@ export default function Skills() {
   }, []);
 
   return (
-    <div ref={skillsRef} className="flex flex-col items-center h-screen bg-[#f5f5f5] px-8">
+    <div ref={skillsRef} className="w-full flex flex-col items-center min-h-[100vh] bg-[#f5f5f5] px-[5vw] overflow-x-hidden">
 
       {/* Beschrijving */}
       <h1
-        className={`mt-10 font-homemadeApple ${homemadeApple.className} text-[14px] sm:text-[18px] md:text-[25px] lg:text-[32px] text-center`}
+        className={`mt-[2vh] font-homemadeApple ${homemadeApple.className} text-[2vw] text-center`}
       >
         {"i've already experimented with:".split("").map((char, idx) => (
           <span
@@ -54,15 +54,14 @@ export default function Skills() {
       </h1>
 
       {/* Sectie met knoppen + afbeelding */}
-      <div className="mt-12 flex flex-col md:flex-row w-full max-w-6xl">
+      <div className="mt-[4vh] flex flex-col w-full gap-[4vw] items-center justify-center">
 
-        {/* Links: verticale knoppen */}
-        <div className="flex flex-col gap-4">
+        {/* Knoppen */}
+        <div className="flex gap-[1.5vh]">
           {skillButtons.map((btn) => (
             <button
               key={btn}
-              className="flex flex-wrap justify-center items-center gap-4 lg:gap-6 rounded-full px-6 py-3 block w-[186px] text-center border border-black py-2 px-3 rounded-md
-                         transition-transform duration-500 transform hover:scale-105 cursor-pointer"
+              className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] rounded-full px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer"
             >
               {btn}
             </button>
@@ -71,25 +70,25 @@ export default function Skills() {
 
         {/* Sticker */}
         <div
-          className={`relative left-30 bottom-[-6] w-[100px] sm:w-[120px] md:w-[140px] lg:w-[200px] ${animateSkills ? "pop-logo" : "opacity-0"}`}
+          className={`absolute right-[62%] w-[11vw] min-w-[50px] max-w-[12rem] overflow-hidden ${animateSkills ? "pop-logo" : "opacity-0"}`}
           style={{ animationDelay: "0.2s" }}
         >
           <Image
             src="/sparkles_sticker.svg"
             alt="Sparkles Sticker"
-            width={200}
-            height={200}
+            width={500}
+            height={500}
             className="w-full h-auto"
           />
         </div>
 
-        {/* Rechts: afbeelding */}
-        <div className="w-108 md:w-124 lg:w-140">
+        {/* Afbeelding */}
+        <div className="w-[40vw]">
           <Image
             src="/me_sticker.svg"
             alt="Me"
-            width={320}
-            height={320}
+            width={500}
+            height={500}
             className="w-full h-auto"
           />
         </div>

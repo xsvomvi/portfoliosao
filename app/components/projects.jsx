@@ -17,11 +17,11 @@ export default function Projects() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setAnimate(true); // trigger animatie
-          observer.disconnect(); // maar één keer afspelen
+          setAnimate(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.3 } // trigger als 30% zichtbaar is
+      { threshold: 0.3 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -32,13 +32,13 @@ export default function Projects() {
     <section
       id="projects"
       ref={sectionRef}
-      className="min-h-screen bg-[#f5f5f5] text-black flex flex-col items-center justify-center py-16 px-8"
+      className="w-full bg-[#f5f5f5] text-black flex flex-col items-center justify-center py-[4rem] px-[5vw] overflow-x-hidden"
     >
       {/* Beschrijving + sticker container */}
-      <div className="relative flex w-full max-w-6xl mb-8 items-start">
+      <div className="relative flex w-full max-w-[75vw] mb-[1rem] items-start">
         {/* Beschrijving */}
         <h1
-          className={`font-homemadeApple ${homemadeApple.className} text-[14px] sm:text-[18px] md:text-[25px] lg:text-[32px] flex flex-wrap justify-start`}
+          className={`font-homemadeApple ${homemadeApple.className} text-[2vw] flex flex-wrap justify-start`}
         >
           {text.split("").map((char, idx) => (
             <span
@@ -53,20 +53,20 @@ export default function Projects() {
 
         {/* Sticker */}
         <div
-          className={`absolute top-[-15vh] left-[75%] w-[100px] sm:w-[120px] md:w-[140px] lg:w-[200px] ${animate ? "pop-logo" : "opacity-0"}`}
+          className={`absolute top-[-10vh] left-[65%] w-[11vw] min-w-[50px] max-w-[12rem] overflow-hidden ${animate ? "pop-logo" : "opacity-0"}`}
           style={{ animationDelay: "0.2s" }}
         >
           <Image
             src="/star_sticker.svg"
             alt="Star Sticker"
-            width={200}
-            height={200}
+            width={500}
+            height={500}
             className="w-full h-auto"
           />
         </div>
       </div>
 
-      {/* Project Cards */}
+      {/* Projecten */}
       {projectsData.map((project) => (
         <ProjectCards
           key={project.id}
@@ -77,7 +77,7 @@ export default function Projects() {
         />
       ))}
 
-      {/* Animatie styles */}
+      {/* Animatie */}
       <style jsx>{`
         @keyframes popIn {
           0% {
