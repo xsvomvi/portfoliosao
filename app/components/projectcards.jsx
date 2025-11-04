@@ -15,11 +15,11 @@ export default function ProjectCards({ title, description, image, link }) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setAnimate(true); // trigger animatie
-          observer.disconnect(); // animatie 1 keer
+          setAnimate(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.3 } // start animatie als 30% zichtbaar
+      { threshold: 0.3 }
     );
 
     if (cardRef.current) observer.observe(cardRef.current);
@@ -29,12 +29,12 @@ export default function ProjectCards({ title, description, image, link }) {
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col md:flex-row bg-[#e9e5d9] text-black rounded-2xl shadow-md overflow-hidden max-w-6xl w-full mx-auto my-1
+      className={`flex flex-col md:flex-row bg-[#e9e5d9] text-black rounded-2xl shadow-md overflow-hidden max-w-[80vw] w-full mx-auto my-[0.5rem]
                   transition-transform duration-700 ease-out transform 
-                  ${animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} 
+                  ${animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[2vh]"} 
                   hover:scale-[1.02]`}
     >
-      {/* Afbeelding links, vierkant en volledige hoogte */}
+      {/* Afbeelding */}
       <div className="md:w-1/3 w-full flex-shrink-0 relative">
         <Image
           src={image}
@@ -45,13 +45,13 @@ export default function ProjectCards({ title, description, image, link }) {
         />
       </div>
 
-      {/* Tekst rechts, verticaal gecentreerd */}
-      <div className="md:w-2/3 w-full p-6 flex flex-col justify-center items-center text-center">
-        <h3 className={`mt-4 font-fugazOne ${fugazOne.className} text-[25px] sm:text-[35px] md:text-[45px] lg:text-[55px]`}>
+      {/* Tekst */}
+      <div className="md:w-2/3 w-full p-[1.5rem] flex flex-col justify-center items-center text-center">
+        <h3 className={`mt-[0.5rem] font-fugazOne ${fugazOne.className} text-[4vw]`}>
           {title}
         </h3>
 
-        <p className={`mt-2 font-homemadeApple ${homemadeApple.className} text-[7px] sm:text-[13px] md:text-[17px] lg:text-[21px] flex flex-wrap justify-center`}>
+        <p className={`mt-[0.5rem] font-homemadeApple ${homemadeApple.className} text-[1.4vw] flex flex-wrap justify-center`}>
           {description.split("").map((char, idx) => (
             <span
               key={idx}
@@ -64,8 +64,7 @@ export default function ProjectCards({ title, description, image, link }) {
         </p>
 
         <Link href={link}>
-          <button className="flex flex-wrap justify-center items-center gap-4 lg:gap-6 rounded-full px-6 py-3 block w-[186px] text-center border border-black py-2 px-3 rounded-md
-                         transition-transform duration-500 transform hover:scale-105 mt-15 cursor-pointer">
+          <button className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] rounded-full px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 mt-[3rem] cursor-pointer">
             view project
           </button>
         </Link>

@@ -4,12 +4,8 @@ import Navbar from "./components/navbar";
 import Header from "./components/header";
 import Projects from "./components/projects";
 import Skills from "./components/skills";
-import { Fugaz_One, Homemade_Apple } from "next/font/google";
+import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
-
-// Fonts
-const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: "400" });
-const fugazOne = Fugaz_One({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
   const goalRef = useRef(null);
@@ -37,10 +33,10 @@ export default function Home() {
       {/* About Me */}
       <section
         id="about"
-        className="min-h-[30vh] flex flex-col justify-center items-center text-center px-8 bg-[#f5f5f5] text-black -mt-16"
+        className="w-full flex flex-col justify-center items-center text-center px-[5vw] py-[5vh] bg-[#f5f5f5] text-black"
       >
-        <h2 className="text-2xl md:text-4xl font-bold mb-4">hello there! ☺</h2>
-        <p className="max-w-[800px] text-base md:text-lg leading-relaxed">
+        <h2 className="text-[2.5vw] font-bold mb-[2vh]">hello there! ☺</h2>
+        <p className="max-w-[60vw] text-[1.4vw] leading-relaxed">
           my name is saomai, a media design enthousiast who wants to translate feelings and ideas into visually stunning realities, evoking emotion and inspiring thought between people.
         </p>
       </section>
@@ -50,12 +46,42 @@ export default function Home() {
       {/* My Goal */}
       <section
         id="goal"
-        className="min-h-[30vh] flex flex-col justify-center items-center text-center px-8 bg-[#f5f5f5] text-black -mt-16"
+        ref={goalRef}
+        className="w-full flex flex-col justify-center items-center text-center px-[5vw] py-[5vh] bg-[#f5f5f5] text-black"
       >
-        <h2 className="max-w-[800px] text-2xl md:text-4xl font-bold mb-4">i want to keep expanding my creative urges, such as experimenting with different media.</h2>
+        <h2 className="text-[2.5vw] font-bold max-w-[60vw] leading-relaxed">
+          i want to keep expanding my creative urges, such as experimenting with different media.
+        </h2>
       </section>
 
       <Skills />
+
+      {/* My Hobbies */}
+      <section
+        id="hobbies"
+        className="w-full flex flex-col justify-center items-center text-center px-[5vw] py-[5vh] bg-[#f5f5f5] text-black"
+      >
+        <h2 className="text-[2.5vw] font-bold mb-[2vh]">when i'm not designing,</h2>
+        <p className="max-w-[60vw] text-[1.4vw] leading-relaxed">
+          i like browsing through music{" "}
+          <Image
+            src="/music_sticker.svg"
+            alt="Music Sticker"
+            width={30}
+            height={30}
+            className="inline-block mx-[0.5vw]"
+          />
+          , movies and games. or i'm outside{" "}
+          <Image
+            src="/outside_sticker.svg"
+            alt="Outside Sticker"
+            width={30}
+            height={30}
+            className="inline-block mx-[0.5vw]"
+          />
+          , drawing inspiration from the people and world around me.
+        </p>
+      </section>
     </>
   );
 }
