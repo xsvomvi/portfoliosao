@@ -8,20 +8,22 @@ const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: "400" });
 
 export default function Header() {
   return (
-    <div className="w-full flex flex-col justify-center items-center h-screen bg-[#f5f5f5] overflow-x-hidden px-[5vw]">
-
+    <div
+      id="home"
+      className="w-full flex flex-col justify-center items-center h-screen overflow-x-hidden px-[5vw]"
+    >
       {/* Logo */}
       <div
         className="pop-logo"
         style={{
           animationDelay: `0.2s`,
-          width: "15vw",
+          width: "5vw",
         }}
       >
         <Image
           src="/star_logo.svg"
           alt="Star Logo"
-          width={500} 
+          width={500}
           height={500}
           className="w-full h-auto"
         />
@@ -29,14 +31,14 @@ export default function Header() {
 
       {/* Naam */}
       <h3
-        className={`mt-[2vh] font-fugazOne ${fugazOne.className} text-[7vw] text-center`}
+        className={`mt-[2vh] font-fugazOne ${fugazOne.className} text-[7vw] text-center cursor-default`}
       >
         SAOMAI NGO
       </h3>
 
       {/* Functie */}
       <h1
-        className={`mt-[1vh] font-homemadeApple ${homemadeApple.className} text-[2vw] text-center`}
+        className={`mt-[1vh] font-homemadeApple ${homemadeApple.className} text-[2vw] text-center cursor-default`}
       >
         {"creative media designer".split("").map((char, idx) => (
           <span

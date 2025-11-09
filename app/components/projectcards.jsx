@@ -7,6 +7,11 @@ import { useState, useEffect, useRef } from "react";
 const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: "400" });
 const fugazOne = Fugaz_One({ subsets: ["latin"], weight: "400" });
 
+const playSound = () => {
+  const audio = new Audio("/paper_fold.mp3"); 
+  audio.play();
+};
+
 export default function ProjectCards({ title, description, image, link }) {
   const [animate, setAnimate] = useState(false);
   const cardRef = useRef(null);
@@ -29,7 +34,7 @@ export default function ProjectCards({ title, description, image, link }) {
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col md:flex-row bg-[#e9e5d9] text-black rounded-2xl shadow-md overflow-hidden max-w-[80vw] w-full mx-auto my-[0.5rem]
+      className={`flex flex-col md:flex-row bg-[#e9e5d9] text-black rounded-2xl shadow-md overflow-hidden max-w-[76vw] w-full mx-auto my-[0.5rem]
                   transition-transform duration-700 ease-out transform 
                   ${animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[2vh]"} 
                   hover:scale-[1.02]`}
@@ -63,6 +68,7 @@ export default function ProjectCards({ title, description, image, link }) {
           ))}
         </p>
 
+        {/* Button */}
         <Link href={link}>
           <button className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] rounded-full px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 mt-[3rem] cursor-pointer">
             view project
@@ -70,6 +76,7 @@ export default function ProjectCards({ title, description, image, link }) {
         </Link>
       </div>
 
+      {/* Animatie */}
       <style jsx>{`
         @keyframes popIn {
           0% { opacity: 0; transform: scale(0.8); }
