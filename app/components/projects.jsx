@@ -1,7 +1,7 @@
-import ProjectCards from "./projectcards";
-import projectsData from "../data/projects.json";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import ProjectCards from "./projectcards";
+import projectsData from "../data/projects.json";
 import { Fugaz_One, Homemade_Apple } from "next/font/google";
 
 // Fonts
@@ -29,16 +29,14 @@ export default function Projects() {
   }, []);
 
   return (
-    <section
-      id="projects"
+    <div
       ref={sectionRef}
-      className="w-full bg-[#f5f5f5] text-black flex flex-col items-center justify-center py-[4rem] px-[5vw] overflow-x-hidden"
+      className="w-full text-black flex flex-col items-center justify-center py-[4rem] px-[5vw] overflow-x-hidden"
     >
-      {/* Beschrijving + sticker container */}
       <div className="relative flex w-full max-w-[75vw] mb-[1rem] items-start">
         {/* Beschrijving */}
         <h1
-          className={`font-homemadeApple ${homemadeApple.className} text-[2vw] flex flex-wrap justify-start`}
+          className={`font-homemadeApple ${homemadeApple.className} text-[2vw] flex flex-wrap justify-start cursor-default`}
         >
           {text.split("").map((char, idx) => (
             <span
@@ -53,7 +51,9 @@ export default function Projects() {
 
         {/* Sticker */}
         <div
-          className={`absolute top-[-10vh] left-[65%] w-[11vw] min-w-[50px] max-w-[12rem] overflow-hidden ${animate ? "pop-logo" : "opacity-0"}`}
+          className={`absolute top-[-10vh] left-[65%] w-[11vw] min-w-[50px] max-w-[12rem] overflow-hidden 
+                      ${animate ? "pop-logo" : "opacity-0"} 
+                      transition-transform duration-300 transform hover:scale-105 cursor-default`}
           style={{ animationDelay: "0.2s" }}
         >
           <Image
@@ -80,24 +80,14 @@ export default function Projects() {
       {/* Animatie */}
       <style jsx>{`
         @keyframes popIn {
-          0% {
-            opacity: 0;
-            transform: scale(0.8);
-          }
-          50% {
-            opacity: 1;
-            transform: scale(1.1);
-          }
-          100% {
-            opacity: 1;
-            transform: scale(1);
-          }
+          0% { opacity: 0; transform: scale(0.8); }
+          50% { opacity: 1; transform: scale(1.1); }
+          100% { opacity: 1; transform: scale(1); }
         }
         .pop-letter,
-        .pop-logo {
-          animation: popIn 0.5s ease forwards;
-        }
+        .pop-logo { animation: popIn 0.5s ease forwards; }
+        .opacity-0 { opacity: 0; }
       `}</style>
-    </section>
+    </div>
   );
 }

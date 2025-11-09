@@ -1,14 +1,39 @@
 @import "tailwindcss";
 
-/* Pop voor letters*/
-@keyframes popLetter {
-  0% { opacity: 0; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.2); }
-  100% { opacity: 1; transform: scale(1); }
+html {
+  scroll-behavior: smooth; 
+  height: 100%;         
 }
 
-.pop-letter, .pop-logo {
+body {
+  background-image: url('/portfolio_background.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed
+}
+
+/* Pop voor letters en logo */
+@keyframes popLetter {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Toepassing op letters en logo */
+.pop-letter,
+.pop-logo {
   display: inline-block;
-  opacity: 0; /* start onzichtbaar */
-  animation: popLetter 0.3s ease forwards;
+  opacity: 0;             /* start onzichtbaar */
+  transform: scale(0.8);  /* start iets kleiner */
+  animation: popLetter 0.3s ease forwards; /* afspelen animatie */
 }

@@ -7,9 +7,6 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        'my-black': '#231F20', // custom kleur
-      },
       fontFamily: {
         homemadeApple: ["Homemade_Apple", "sans-serif"],
         inter: ["Inter", "sans-serif"],
