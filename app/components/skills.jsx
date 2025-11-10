@@ -1,17 +1,17 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Fugaz_One, Homemade_Apple } from "next/font/google";
 
 // Fonts
 const fugazOne = Fugaz_One({ subsets: ["latin"], weight: "400" });
 const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: "400" });
 
-// Knoppen
+// Knoppen + skills
 const skillButtons = [
-  "photography & video editing",
-  "web design & ui/ux design",
-  "content creation",
-  "graphic design"
+  { name: "photography & video editing", link: "/skill1" },
+  { name: "web design & ui/ux design", link: "/skill2" },
+  { name: "content creation & content strategy", link: "/skill3" },
 ];
 
 const playSound = () => {
@@ -64,12 +64,19 @@ export default function Skills() {
         {/* Knoppen */}
         <div className="flex gap-[1.5vh]">
           {skillButtons.map((btn) => (
-            <button
-              key={btn}
-              className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
+            <Link
+              key={btn.name}
+              href={btn.link}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {btn}
-            </button>
+              <button
+                onClick={playSound}
+                className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
+              >
+                {btn.name}
+              </button>
+            </Link>
           ))}
         </div>
 
