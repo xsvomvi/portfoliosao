@@ -1,6 +1,5 @@
 import React from "react";
 
-// Navbar links
 const links = ["home", "projects", "skills", "contact"];
 
 const playSound = () => {

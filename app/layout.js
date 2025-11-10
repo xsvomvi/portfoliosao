@@ -1,4 +1,3 @@
-// app/layout.js
 import './globals.css'
 import { Homemade_Apple, Inter, Fugaz_One } from 'next/font/google'
 
@@ -9,8 +8,8 @@ const fugazOne = Fugaz_One({ subsets: ['latin'], weight: '400' })
 
 // Metadata
 export const metadata = {
-  title: 'Sao Portfolio',
-  description: 'My personal portfolio',
+  title: "sao's portfolio ⋆˙⟡",
+  description: 'my personal portfolio',
 }
 
 // Root layout

@@ -68,7 +68,7 @@ export default function ProjectCards({ title, description, image, link }) {
           ))}
         </p>
 
-        {/* Button */}
+        {/* Knop */}
         <Link href={link}>
           <button className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] rounded-full px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 mt-[3rem] cursor-pointer">
             view project

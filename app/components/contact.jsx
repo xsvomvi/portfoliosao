@@ -78,7 +78,7 @@ export default function Contact() {
         ))}
       </h1>
 
-      {/* Knoppen sectie */}
+      {/* Knoppen */}
       <div className="flex justify-between w-full px-[10vw] mt-[4vh]">
         <div className="flex flex-col gap-[2vh]">
           {contactButtons.slice(0, 2).map((btn) => (
