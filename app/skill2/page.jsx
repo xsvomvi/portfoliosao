@@ -11,7 +11,6 @@ export default function Page2() {
       reverse={false}
       buttons={[
         { text: "ichi website", link: "https://saospassionproject.netlify.app" },
-        { text: "[new project]", link: "" },
       ]}
     />
   );

@@ -51,12 +51,12 @@ export default function ProjectCards({ title, description, image, link }) {
       </div>
 
       {/* Tekst */}
-      <div className="md:w-2/3 w-full p-[1.5rem] flex flex-col justify-center items-center text-center">
-        <h3 className={`mt-[0.5rem] font-fugazOne ${fugazOne.className} text-[4vw]`}>
+      <div className="md:w-2/3 w-full p-[1.5rem] flex flex-col justify-center items-center text-center cursor-default">
+        <h3 className={`mt-[0.5rem] font-fugazOne ${fugazOne.className} text-[3.75vw]`}>
           {title}
         </h3>
 
-        <p className={`mt-[0.5rem] font-homemadeApple ${homemadeApple.className} text-[1.4vw] flex flex-wrap justify-center`}>
+        <p className={`mt-[0.5rem] font-homemadeApple ${homemadeApple.className} text-[1.4vw] flex flex-wrap justify-center cursor-default`}>
           {description.split("").map((char, idx) => (
             <span
               key={idx}

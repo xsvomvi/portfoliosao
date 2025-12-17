@@ -82,7 +82,7 @@ export default function Skills() {
 
         {/* Sticker met hover */}
         <div
-          className={`absolute right-[62%] w-[11vw] min-w-[50px] max-w-[12rem] overflow-hidden
+          className={`absolute right-[62%] w-[9vw] min-w-[50px] max-w-[12rem] overflow-hidden
                       ${animateSkills ? "pop-logo" : "opacity-0"}
                       transition-transform duration-300 transform hover:scale-105 cursor-default`}
           style={{ animationDelay: "0.2s" }}

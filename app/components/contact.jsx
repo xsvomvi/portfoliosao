@@ -10,7 +10,7 @@ const contactButtons = [
   { name: "instagram", url: "https://instagram.com/svospo" },
   { name: "tiktok", url: "https://tiktok.com/@soeemiee" },
   { name: "email", url: "mailto:bapsao@hotmail.com" },
-  { name: "linkedin", url: "https://www.linkedin.com/in/jouwprofiel/" }
+  { name: "linkedin", url: "https://www.linkedin.com/in/saomai-ngo-539822383/" }
 ];
 
 const playSound = () => {
@@ -50,7 +50,7 @@ export default function Contact() {
     >
       {/* Sticker met hover */}
       <div
-        className={`w-[19vw] overflow-hidden ${animateContact ? "pop-logo" : "opacity-0"} 
+        className={`w-[18vw] overflow-hidden ${animateContact ? "pop-logo" : "opacity-0"} 
                     transition-transform duration-300 transform hover:scale-105 cursor-default`}
         style={{ animationDelay: "0.2s" }}
       >

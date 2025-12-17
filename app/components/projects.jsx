@@ -51,7 +51,7 @@ export default function Projects() {
 
         {/* Sticker */}
         <div
-          className={`absolute top-[-10vh] left-[65%] w-[11vw] min-w-[50px] max-w-[12rem] overflow-hidden 
+          className={`absolute top-[-8vh] left-[65%] w-[9vw] min-w-[50px] max-w-[12rem] overflow-hidden 
                       ${animate ? "pop-logo" : "opacity-0"} 
                       transition-transform duration-300 transform hover:scale-105 cursor-default`}
           style={{ animationDelay: "0.2s" }}
