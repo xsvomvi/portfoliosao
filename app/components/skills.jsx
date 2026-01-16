@@ -9,9 +9,9 @@ const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: "400" });
 
 // Knoppen + skills
 const skillButtons = [
-  { name: "photography & video editing", link: "/skill1" },
-  { name: "web design & ui/ux design", link: "/skill2" },
-  { name: "content creation & content strategy", link: "/skill3" },
+  { name: "video editing", link: "/skill1" },
+  { name: "ui/ux design", link: "/skill2" },
+  { name: "content creation", link: "/skill3" },
 ];
 
 const playSound = () => {
@@ -78,22 +78,6 @@ export default function Skills() {
               </button>
             </Link>
           ))}
-        </div>
-
-        {/* Sticker met hover */}
-        <div
-          className={`absolute right-[62%] w-[9vw] min-w-[50px] max-w-[12rem] overflow-hidden
-                      ${animateSkills ? "pop-logo" : "opacity-0"}
-                      transition-transform duration-300 transform hover:scale-105 cursor-default`}
-          style={{ animationDelay: "0.2s" }}
-        >
-          <Image
-            src="/sparkles_sticker.svg"
-            alt="Sparkles Sticker"
-            width={500}
-            height={500}
-            className="w-full h-auto"
-          />
         </div>
 
         {/* Afbeelding */}
