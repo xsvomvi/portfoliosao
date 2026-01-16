@@ -34,7 +34,7 @@ export default function ProjectCards({ title, description, image, link }) {
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col md:flex-row bg-[#e9e5d9] text-black rounded-2xl shadow-md overflow-hidden max-w-[76vw] w-full mx-auto my-[0.5rem]
+      className={`flex flex-col md:flex-row bg-[#e9e5d9] text-black rounded-2xl shadow-md overflow-hidden max-w-[75vw] w-full mx-auto my-[0.5rem]
                   transition-transform duration-700 ease-out transform 
                   ${animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[2vh]"} 
                   hover:scale-[1.02]`}
@@ -52,11 +52,11 @@ export default function ProjectCards({ title, description, image, link }) {
 
       {/* Tekst */}
       <div className="md:w-2/3 w-full p-[1.5rem] flex flex-col justify-center items-center text-center cursor-default">
-        <h3 className={`mt-[0.5rem] font-fugazOne ${fugazOne.className} text-[3.75vw]`}>
+        <h3 className={`mt-[0.5rem] font-fugazOne ${fugazOne.className} text-[3.5vw] lg:text-[3vw]`}>
           {title}
         </h3>
 
-        <p className={`mt-[0.5rem] font-homemadeApple ${homemadeApple.className} text-[1.4vw] flex flex-wrap justify-center cursor-default`}>
+        <p className={`mt-[0.5rem] font-homemadeApple ${homemadeApple.className} text-[2vw] lg:text-[1.5vw] flex flex-wrap justify-center cursor-default`}>
           {description.split("").map((char, idx) => (
             <span
               key={idx}
@@ -70,7 +70,7 @@ export default function ProjectCards({ title, description, image, link }) {
 
         {/* Knop */}
         <Link href={link}>
-          <button className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] rounded-full px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 mt-[3rem] cursor-pointer">
+          <button className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] rounded-full px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 mt-[4rem] cursor-pointer">
             view project
           </button>
         </Link>
