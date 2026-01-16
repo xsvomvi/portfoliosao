@@ -14,7 +14,7 @@ const contactButtons = [
 ];
 
 const playSound = () => {
-  const audio = new Audio("/paper_fold.mp3"); 
+  const audio = new Audio("/paper_fold.mp3");
   audio.play();
 };
 
@@ -22,7 +22,6 @@ export default function Contact() {
   const contactRef = useRef(null);
   const [animateContact, setAnimateContact] = useState(false);
 
-  // IntersectionObserver
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -46,26 +45,30 @@ export default function Contact() {
     <div
       id="contact"
       ref={contactRef}
-      className="w-full flex flex-col justify-center items-center overflow-x-hidden px-[5vw] pb-[4vh]"
+      className="w-full flex flex-col justify-center items-center overflow-x-hidden px-[5vw] pb-[4vh] relative"
     >
-      {/* Sticker met hover */}
+      {/* Sticker */}
       <div
-        className={`w-[18vw] overflow-hidden ${animateContact ? "pop-logo" : "opacity-0"} 
-                    transition-transform duration-300 transform hover:scale-105 cursor-default`}
+        className={`w-[40vw] sm:w-[25vw] lg:w-[18vw] overflow-hidden 
+        ${animateContact ? "pop-logo" : "opacity-0"} 
+        transition-transform duration-300 transform hover:scale-105 cursor-default`}
         style={{ animationDelay: "0.2s" }}
       >
         <Image
           src="/contact_sticker.svg"
           alt="Contact Sticker"
-          width={500} 
+          width={500}
           height={500}
           className="w-full h-auto"
         />
       </div>
 
-      {/* Tekst */}
+      {/* Titel */}
       <h1
-        className={`mt-[1vh] font-homemadeApple ${homemadeApple.className} text-[2vw] text-center cursor-default`}
+        className={`mt-[1vh] font-homemadeApple ${homemadeApple.className} text-center cursor-default`}
+        style={{
+          fontSize: "clamp(1.2rem, 2.2vw, 2.5rem)"
+        }}
       >
         {"let's create & connect".split("").map((char, idx) => (
           <span
@@ -79,39 +82,38 @@ export default function Contact() {
       </h1>
 
       {/* Knoppen */}
-      <div className="flex justify-between w-full px-[10vw] mt-[4vh]">
-        <div className="flex flex-col gap-[2vh]">
-          {contactButtons.slice(0, 2).map((btn) => (
-            <a
-              onClick={playSound}
-              key={btn.name}
-              href={btn.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] rounded-full px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
+      <div className="mt-[4vh] flex flex-col sm:flex-row flex-wrap justify-center gap-[1.5vh] sm:gap-[1vw] w-full max-w-[36rem]">
+        {contactButtons.map((btn) => (
+          <a
+            key={btn.name}
+            onClick={playSound}
+            href={btn.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-[12rem]"
+          >
+            <button
+              className="
+                flex justify-center items-center
+                border border-black
+                bg-[#f5f5f5]
+                cursor-pointer
+                transition-transform duration-500 transform hover:scale-105
+                rounded-md
+                px-[1.25rem] py-[0.75rem]
+                w-full
+                min-h-[3rem]
+                text-center
+              "
+              style={{ fontSize: "clamp(0.9rem, 1.2vw, 1.05rem)" }}
             >
               {btn.name}
-            </a>
-          ))}
-        </div>
-
-        <div className="flex flex-col gap-[2vh]">
-          {contactButtons.slice(2, 4).map((btn) => (
-            <a
-              onClick={playSound}
-              key={btn.name}
-              href={btn.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] rounded-full px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
-            >
-              {btn.name}
-            </a>
-          ))}
-        </div>
+            </button>
+          </a>
+        ))}
       </div>
 
-      {/* Animatie */}
+      {/* Animaties */}
       <style jsx>{`
         @keyframes popIn {
           0% { opacity: 0; transform: scale(0.8); }
@@ -119,13 +121,12 @@ export default function Contact() {
           100% { opacity: 1; transform: scale(1); }
         }
 
-        .pop-letter, .pop-logo {
+        .pop-letter,
+        .pop-logo {
           animation: popIn 0.5s ease forwards;
         }
 
-        .opacity-0 {
-          opacity: 0;
-        }
+        .opacity-0 { opacity: 0; }
       `}</style>
     </div>
   );

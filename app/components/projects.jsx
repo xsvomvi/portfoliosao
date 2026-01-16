@@ -33,10 +33,11 @@ export default function Projects() {
       ref={sectionRef}
       className="w-full text-black flex flex-col items-center justify-center py-[4rem] px-[5vw] overflow-x-hidden"
     >
+      {/* Titel / Beschrijving + sticker */}
       <div className="relative flex w-full max-w-[75vw] mb-[1rem] items-start">
-        {/* Beschrijving */}
         <h1
-          className={`font-homemadeApple ${homemadeApple.className} text-[2vw] flex flex-wrap justify-start cursor-default`}
+          className={`font-homemadeApple ${homemadeApple.className} flex flex-wrap justify-start cursor-default`}
+          style={{ fontSize: "clamp(1rem, 2vw, 2rem)" }}
         >
           {text.split("").map((char, idx) => (
             <span
@@ -48,34 +49,20 @@ export default function Projects() {
             </span>
           ))}
         </h1>
-
-        {/* Sticker */}
-        <div
-          className={`absolute top-[-8vh] left-[65%] w-[9vw] min-w-[50px] max-w-[12rem] overflow-hidden 
-                      ${animate ? "pop-logo" : "opacity-0"} 
-                      transition-transform duration-300 transform hover:scale-105 cursor-default`}
-          style={{ animationDelay: "0.2s" }}
-        >
-          <Image
-            src="/star_sticker.svg"
-            alt="Star Sticker"
-            width={500}
-            height={500}
-            className="w-full h-auto"
-          />
-        </div>
       </div>
 
       {/* Projecten */}
-      {projectsData.map((project) => (
-        <ProjectCards
-          key={project.id}
-          title={project.title}
-          description={project.description}
-          image={project.image}
-          link={project.link}
-        />
-      ))}
+      <div className="flex flex-col w-full items-center gap-[2.5rem]">
+        {projectsData.map((project) => (
+          <ProjectCards
+            key={project.id}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            link={project.link}
+          />
+        ))}
+      </div>
 
       {/* Animatie */}
       <style jsx>{`
@@ -84,6 +71,7 @@ export default function Projects() {
           50% { opacity: 1; transform: scale(1.1); }
           100% { opacity: 1; transform: scale(1); }
         }
+
         .pop-letter,
         .pop-logo { animation: popIn 0.5s ease forwards; }
         .opacity-0 { opacity: 0; }

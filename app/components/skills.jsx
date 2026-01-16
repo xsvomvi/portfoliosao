@@ -4,14 +4,14 @@ import Link from "next/link";
 import { Fugaz_One, Homemade_Apple } from "next/font/google";
 
 // Fonts
-const fugazOne = Fugaz_One({ subsets: ["latin"], weight: "400" });
 const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: "400" });
+const fugazOne = Fugaz_One({ subsets: ["latin"], weight: "400" });
 
 // Knoppen + skills
 const skillButtons = [
-  { name: "photography & video editing", link: "/skill1" },
-  { name: "web design & ui/ux design", link: "/skill2" },
-  { name: "content creation & content strategy", link: "/skill3" },
+  { name: "video editing", link: "/skill1" },
+  { name: "ui/ux design", link: "/skill2" },
+  { name: "content (strategy)", link: "/skill3" },
 ];
 
 const playSound = () => {
@@ -22,7 +22,7 @@ const playSound = () => {
 export default function Skills() {
   const skillsRef = useRef(null);
   const [animateSkills, setAnimateSkills] = useState(false);
-  const text = "i've already experimented with:";
+  const text = "i've already experimented a bit with:";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,11 +42,12 @@ export default function Skills() {
   return (
     <div
       ref={skillsRef}
-      className="w-full flex flex-col items-center min-h-[100vh] px-[5vw] overflow-x-hidden"
+      className="w-full flex flex-col items-center px-[5vw] overflow-x-hidden relative"
     >
       {/* Beschrijving */}
       <h1
-        className={`font-homemadeApple ${homemadeApple.className} text-[2vw] flex flex-wrap justify-start cursor-default`}
+        className={`font-homemadeApple ${homemadeApple.className} flex flex-wrap justify-start cursor-default mt-[3vh]`}
+        style={{ fontSize: "clamp(1rem, 2vw, 2rem)" }} // MATCH met Projects-page
       >
         {text.split("").map((char, idx) => (
           <span
@@ -60,19 +61,22 @@ export default function Skills() {
       </h1>
 
       {/* Sectie met knoppen + afbeelding */}
-      <div className="mt-[4vh] flex flex-col w-full gap-[4vw] items-center justify-center">
+      <div className="mt-[3vh] flex flex-col items-center w-full gap-[2.5vw]">
+
         {/* Knoppen */}
-        <div className="flex gap-[1.5vh]">
+        <div className="flex flex-col sm:flex-row gap-[1.5vh] sm:gap-[1vw] w-full justify-center">
           {skillButtons.map((btn) => (
             <Link
               key={btn.name}
               href={btn.link}
               target="_blank"
               rel="noopener noreferrer"
+              className="w-full sm:w-auto"
             >
               <button
                 onClick={playSound}
-                className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
+                className="flex justify-center items-center gap-[0.5vw] sm:gap-[1vw] px-[1.5rem] py-[0.75rem] w-full sm:w-[12rem] text-center border border-black rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
+                style={{ fontSize: "clamp(0.8rem, 1vw, 1rem)" }}
               >
                 {btn.name}
               </button>
@@ -80,24 +84,8 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Sticker met hover */}
-        <div
-          className={`absolute right-[62%] w-[9vw] min-w-[50px] max-w-[12rem] overflow-hidden
-                      ${animateSkills ? "pop-logo" : "opacity-0"}
-                      transition-transform duration-300 transform hover:scale-105 cursor-default`}
-          style={{ animationDelay: "0.2s" }}
-        >
-          <Image
-            src="/sparkles_sticker.svg"
-            alt="Sparkles Sticker"
-            width={500}
-            height={500}
-            className="w-full h-auto"
-          />
-        </div>
-
         {/* Afbeelding */}
-        <div className="w-[40vw]">
+        <div className="w-[40vw] mt-[2.5vh] mb-[2.5vh]">
           <Image
             src="/me_sticker.svg"
             alt="Me"

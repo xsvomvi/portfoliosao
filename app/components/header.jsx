@@ -16,8 +16,8 @@ export default function Header() {
       <div
         className="pop-logo"
         style={{
-          animationDelay: `0.2s`,
-          width: "5vw",
+          animationDelay: "0.2s",
+          width: "clamp(3rem, 5vw, 5rem)",
         }}
       >
         <Image
@@ -31,19 +31,25 @@ export default function Header() {
 
       {/* Naam */}
       <h3
-        className={`mt-[2vh] font-fugazOne ${fugazOne.className} text-[7vw] text-center cursor-default`}
+        className={`mt-[2vh] font-fugazOne ${fugazOne.className} text-center cursor-default`}
+        style={{
+          fontSize: "clamp(3rem, 7vw, 6rem)",
+        }}
       >
         SAOMAI NGO
       </h3>
 
       {/* Functie */}
       <h1
-        className={`mt-[1vh] font-homemadeApple ${homemadeApple.className} text-[2vw] text-center cursor-default`}
+        className={`mt-[1vh] font-homemadeApple ${homemadeApple.className} text-center cursor-default`}
+        style={{
+          fontSize: "clamp(1.2rem, 2vw, 2.2rem)",
+        }}
       >
         {"creative media designer".split("").map((char, idx) => (
           <span
             key={idx}
-            className="pop-letter"
+            className="pop-letter inline-block"
             style={{ animationDelay: `${idx * 0.12}s` }}
           >
             {char === " " ? "\u00A0" : char}

@@ -8,7 +8,7 @@ const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: "400" });
 const fugazOne = Fugaz_One({ subsets: ["latin"], weight: "400" });
 
 const playSound = () => {
-  const audio = new Audio("/paper_fold.mp3"); 
+  const audio = new Audio("/paper_fold.mp3");
   audio.play();
 };
 
@@ -34,10 +34,11 @@ export default function ProjectCards({ title, description, image, link }) {
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col md:flex-row bg-[#e9e5d9] text-black rounded-2xl shadow-md overflow-hidden max-w-[76vw] w-full mx-auto my-[0.5rem]
-                  transition-transform duration-700 ease-out transform 
-                  ${animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[2vh]"} 
-                  hover:scale-[1.02]`}
+      className={`flex flex-col md:flex-row bg-[#e9e5d9] text-black rounded-2xl shadow-md overflow-hidden
+        max-w-[76vw] w-full mx-auto my-[0.5rem]
+        transition-transform duration-700 ease-out transform
+        ${animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[2vh]"}
+        hover:scale-[1.02]`}
     >
       {/* Afbeelding */}
       <div className="md:w-1/3 w-full flex-shrink-0 relative">
@@ -52,11 +53,17 @@ export default function ProjectCards({ title, description, image, link }) {
 
       {/* Tekst */}
       <div className="md:w-2/3 w-full p-[1.5rem] flex flex-col justify-center items-center text-center cursor-default">
-        <h3 className={`mt-[0.5rem] font-fugazOne ${fugazOne.className} text-[3.75vw]`}>
+        <h3
+          className={`mt-[0.5rem] font-fugazOne ${fugazOne.className}`}
+          style={{ fontSize: "clamp(1.6rem, 3.75vw, 2.8rem)" }}
+        >
           {title}
         </h3>
 
-        <p className={`mt-[0.5rem] font-homemadeApple ${homemadeApple.className} text-[1.4vw] flex flex-wrap justify-center cursor-default`}>
+        <p
+          className={`mt-[0.5rem] font-homemadeApple ${homemadeApple.className} flex flex-wrap justify-center`}
+          style={{ fontSize: "clamp(0.95rem, 1.4vw, 1.2rem)" }}
+        >
           {description.split("").map((char, idx) => (
             <span
               key={idx}
@@ -69,22 +76,43 @@ export default function ProjectCards({ title, description, image, link }) {
         </p>
 
         {/* Knop */}
-        <Link href={link}>
-          <button className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] rounded-full px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 mt-[3rem] cursor-pointer">
-            view project
-          </button>
-        </Link>
+        <div className="mt-[2.5rem] flex justify-center w-full">
+          <Link href={link}>
+            <button
+              onClick={playSound}
+              className="
+                flex justify-center items-center
+                border border-black
+                rounded-md
+                transition-transform duration-500 transform hover:scale-105
+                px-[1.25rem] py-[0.6rem]
+                w-full sm:w-[12rem]
+                bg-transparent
+                cursor-pointer
+                text-center
+              "
+              style={{ fontSize: "clamp(0.85rem, 1.1vw, 1rem)" }}
+            >
+              view project
+            </button>
+          </Link>
+        </div>
       </div>
 
-      {/* Animatie */}
+      {/* Animaties */}
       <style jsx>{`
         @keyframes popIn {
           0% { opacity: 0; transform: scale(0.8); }
           50% { opacity: 1; transform: scale(1.1); }
           100% { opacity: 1; transform: scale(1); }
         }
+
         .pop-letter {
           animation: popIn 0.5s ease forwards;
+        }
+
+        .opacity-0 {
+          opacity: 0;
         }
       `}</style>
     </div>
