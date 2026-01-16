@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "title": "WEBSITE FOR ICHI",
-    "description": "designing a website for café ichi",
-    "image": "/images/project_ichi.svg",
+    "title": "SAO'S PHOTOBOOTH",
+    "description": "creating a personal photobooth experience",
+    "image": "/images/project_booth.svg",
     "link": "/project1"
   },
   {
@@ -12,5 +12,12 @@
     "description": "making a boardgame from scratch",
     "image": "/images/project_fwb.svg",
     "link": "/project2"
+  },
+  {
+    "id": 3,
+    "title": "ICHI CAFÉ WEBSITE",
+    "description": "designing a website for a matcha café",
+    "image": "/images/project_ichi.svg",
+    "link": "/project3"
   }
 ]

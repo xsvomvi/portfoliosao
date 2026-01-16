@@ -11,7 +11,8 @@ by tuning into user feedback and testing, i refine my designs so they're not jus
       image="/project2.svg"
       reverse={false}
       buttons={[
-        { text: "ichi website", link: "https://saospassionproject.netlify.app" },
+        { text: "photobooth", link: "https://saosphotobooth.vercel.app" },
+        { text: "ichi website", link: "https://ichiwebsite.netlify.app" },
       ]}
     />
   );

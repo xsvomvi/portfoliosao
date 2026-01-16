@@ -3,14 +3,13 @@ import FullPageProject from "../components/fullpage";
 export default function Page4() {
   return (
     <FullPageProject
-      title="WEBSITE FOR ICHI"
-      quote="designing a website for café ichi"
-      description="* designed and coded a café website based on owner interviews, competitive research and user testing. iterated on ui/ux through feedback and built the site using html, css and javascript, focusing on a minimal, modern design aligned with ichi's instagram aesthetic. the site provides clear menu access, contact info, opening hours and a foundation for future online ordering."
-      image="/images/project_ichi.svg"
+      title="SAO'S PHOTOBOOTH"
+      quote="creating a personal photobooth experience"
+      description="* designed a photobooth for a personal project aimed at anime fans, focusing on user-friendly features and webcam functionality. optimized based on user feedback and testing with the target audience, creating visuals and interactions that enhance the anime theme and engage users more."
+      image="/images/project_booth.svg"
       reverse={false}
       buttons={[
-        { text: "ichi website", link: "https://saospassionproject.netlify.app" },
-        { text: "documentation", link: "/ichi.pdf" },
+        { text: "website", link: "https://saosphotobooth.vercel.app" },
       ]}
     />
   );
