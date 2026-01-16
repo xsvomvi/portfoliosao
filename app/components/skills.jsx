@@ -11,7 +11,6 @@ const homemadeApple = Homemade_Apple({ subsets: ["latin"], weight: "400" });
 const skillButtons = [
   { name: "video editing", link: "/skill1" },
   { name: "ui/ux design", link: "/skill2" },
-  { name: "content creation", link: "/skill3" },
 ];
 
 const playSound = () => {
@@ -22,7 +21,7 @@ const playSound = () => {
 export default function Skills() {
   const skillsRef = useRef(null);
   const [animateSkills, setAnimateSkills] = useState(false);
-  const text = "i've already experimented with:";
+  const text = "i've already experimented a bit with:";
 
   useEffect(() => {
     const observer = new IntersectionObserver(

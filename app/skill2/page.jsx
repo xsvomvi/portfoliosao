@@ -3,10 +3,11 @@ import FullPageProject from "../components/fullpage";
 export default function Page2() {
   return (
     <FullPageProject
-      title="WEB DESIGN & UI/UX DESIGN"
-      quote='"webbing" my creativity even more'
-      description="design is about more than visuals: it's about understanding what people feel, want, need and expect. with web design & ui/ux, combining creativity with critical thinking and storytelling were important skills i've learned, continuously adapting to create meaningful experiences."
-      programs="programs learned: figma, canva | languages learned: html, css, javascript."
+      title="UI/UX DESIGN"
+      quote="my second phase of exploring media"
+      description="design is about listening, not just creating:
+by tuning into user feedback and testing, i refine my designs so they're not just easy on the eyes, but also meet the needs, making sure the experience is fun and intuitive."
+      programs="tools: figma, canva | html, css, javascript."
       image="/project2.svg"
       reverse={false}
       buttons={[
