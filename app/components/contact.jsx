@@ -50,7 +50,7 @@ export default function Contact() {
     >
       {/* Sticker met hover */}
       <div
-        className={`w-[18vw] overflow-hidden ${animateContact ? "pop-logo" : "opacity-0"} 
+        className={`mt-[3vh] w-[25vw] overflow-hidden ${animateContact ? "pop-logo" : "opacity-0"} 
                     transition-transform duration-300 transform hover:scale-105 cursor-default`}
         style={{ animationDelay: "0.2s" }}
       >
@@ -65,7 +65,7 @@ export default function Contact() {
 
       {/* Tekst */}
       <h1
-        className={`mt-[1vh] font-homemadeApple ${homemadeApple.className} text-[2vw] text-center cursor-default`}
+        className={`mt-[1vh] font-homemadeApple ${homemadeApple.className} text-[3vw] lg:text-[2vw] text-center cursor-default`}
       >
         {"let's create & connect".split("").map((char, idx) => (
           <span
@@ -80,7 +80,7 @@ export default function Contact() {
 
       {/* Knoppen */}
       <div className="flex justify-between w-full px-[10vw] mt-[4vh]">
-        <div className="flex flex-col gap-[2vh]">
+        <div className="flex flex-col gap-[1vh]">
           {contactButtons.slice(0, 2).map((btn) => (
             <a
               onClick={playSound}
@@ -88,14 +88,14 @@ export default function Contact() {
               href={btn.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] rounded-full px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
+              className="flex flex-wrap justify-center items-center gap-[1vw] rounded-full px-[1.5rem] py-[0.75rem] w-[11rem] block w-[8rem] text-center border border-black rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
             >
               {btn.name}
             </a>
           ))}
         </div>
 
-        <div className="flex flex-col gap-[2vh]">
+        <div className="flex flex-col gap-[1vh]">
           {contactButtons.slice(2, 4).map((btn) => (
             <a
               onClick={playSound}
@@ -103,7 +103,7 @@ export default function Contact() {
               href={btn.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] rounded-full px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
+              className="flex flex-wrap justify-center items-center gap-[1vw] rounded-full px-[1.5rem] py-[0.75rem] w-[11rem] block w-[8rem] text-center border border-black rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
             >
               {btn.name}
             </a>

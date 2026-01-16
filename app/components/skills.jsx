@@ -42,11 +42,11 @@ export default function Skills() {
   return (
     <div
       ref={skillsRef}
-      className="w-full flex flex-col items-center min-h-[100vh] px-[5vw] overflow-x-hidden"
+      className="w-full flex flex-col items-center px-[5vw] overflow-x-hidden"
     >
       {/* Beschrijving */}
       <h1
-        className={`font-homemadeApple ${homemadeApple.className} text-[2vw] flex flex-wrap justify-start cursor-default`}
+        className={`font-homemadeApple ${homemadeApple.className} text-[3vw] lg:text-[2vw] flex flex-wrap justify-start cursor-default`}
       >
         {text.split("").map((char, idx) => (
           <span
@@ -72,28 +72,12 @@ export default function Skills() {
             >
               <button
                 onClick={playSound}
-                className="flex flex-wrap justify-center items-center gap-[1vw] lg:gap-[1.5vw] px-[1.5rem] py-[0.75rem] w-[12rem] block w-[8rem] text-center border border-black py-[0.5rem] px-[0.75rem] rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
+                className="flex flex-wrap justify-center items-center gap-[1vw] px-[1.5rem] py-[0.75rem] w-[11rem] block w-[8rem] text-center border border-black rounded-md transition-transform duration-500 transform hover:scale-105 cursor-pointer bg-[#f5f5f5]"
               >
                 {btn.name}
               </button>
             </Link>
           ))}
-        </div>
-
-        {/* Sticker met hover */}
-        <div
-          className={`absolute right-[62%] w-[9vw] min-w-[50px] max-w-[12rem] overflow-hidden
-                      ${animateSkills ? "pop-logo" : "opacity-0"}
-                      transition-transform duration-300 transform hover:scale-105 cursor-default`}
-          style={{ animationDelay: "0.2s" }}
-        >
-          <Image
-            src="/sparkles_sticker.svg"
-            alt="Sparkles Sticker"
-            width={500}
-            height={500}
-            className="w-full h-auto"
-          />
         </div>
 
         {/* Afbeelding */}

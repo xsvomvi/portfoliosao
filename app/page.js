@@ -42,12 +42,12 @@ export default function Home() {
 
       <section
         id="hobbies"
-        className="w-full flex flex-col justify-center items-center text-center px-[5vw] py-[5vh] text-black pt-15"
+        className="w-full flex flex-col justify-center items-center text-center px-[5vw] py-[5vh] text-black pt-25"
       >
-        <h2 className="text-[2.5vw] font-bold mb-[2vh] cursor-default">
+        <h2 className="text-[3vw] lg:text-[2vw] font-bold mb-[2vh] cursor-default">
           when i'm not designing,
         </h2>
-        <p className="max-w-[60vw] text-[1.4vw] leading-relaxed cursor-default">
+        <p className="max-w-[55vw] text-[2vw] lg:text-[1.5vw] cursor-default">
           i like browsing through music{" "}
           <Image
             src="/music_sticker.svg"
@@ -56,7 +56,7 @@ export default function Home() {
             height={30}
             className="inline-block mx-[0.5vw]"
           />
-          , movies and games. or i'm outside{" "}
+          , movies and games, or i'm outside{" "}
           <Image
             src="/outside_sticker.svg"
             alt="Outside Sticker"
@@ -64,7 +64,7 @@ export default function Home() {
             height={30}
             className="inline-block mx-[0.5vw]"
           />
-          , drawing inspiration from the people and world around me.
+          , drawing inspiration from the world around me.
         </p>
       </section>
 
