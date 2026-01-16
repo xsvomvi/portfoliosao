@@ -18,12 +18,12 @@ export default function Home() {
         id="projects"
         className="w-full flex flex-col justify-center items-center text-center px-[5vw] py-[5vh] text-black"
       >
-        <h2 className="text-[2.5vw] font-bold mb-[2vh] cursor-default">
+        <h2 className="text-[3vw] lg:text-[2vw] font-bold mb-[2vh] cursor-default">
           hello there! ☺
         </h2>
-        <p className="max-w-[60vw] text-[1.4vw] leading-relaxed cursor-default">
+        <p className="max-w-[55vw] text-[2vw] lg:text-[1.5vw] leading-relaxed cursor-default">
           my name is saomai, a media design enthusiast who wants to translate feelings and ideas 
-          into visually stunning realities, evoking emotion and inspiring thought between people.
+          into visually stunning realities.
         </p>
       </section>
 

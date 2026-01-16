@@ -31,14 +31,16 @@ export default function Header() {
 
       {/* Naam */}
       <h3
-        className={`mt-[2vh] font-fugazOne ${fugazOne.className} text-[7vw] text-center cursor-default`}
+        className={`mt-[2vh] font-fugazOne ${fugazOne.className} 
+          text-[7.5vw] text-center cursor-default`}
       >
         SAOMAI NGO
       </h3>
 
       {/* Functie */}
       <h1
-        className={`mt-[1vh] font-homemadeApple ${homemadeApple.className} text-[2vw] text-center cursor-default`}
+        className={`mt-[1vh] font-homemadeApple ${homemadeApple.className} 
+          text-[3vw] lg:text-[2vw] text-center cursor-default`}
       >
         {"creative media designer".split("").map((char, idx) => (
           <span

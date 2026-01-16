@@ -80,6 +80,22 @@ export default function Skills() {
           ))}
         </div>
 
+        {/* Sticker met hover */}
+        <div
+          className={`absolute right-[62%] w-[9vw] min-w-[50px] max-w-[12rem] overflow-hidden
+                      ${animateSkills ? "pop-logo" : "opacity-0"}
+                      transition-transform duration-300 transform hover:scale-105 cursor-default`}
+          style={{ animationDelay: "0.2s" }}
+        >
+          <Image
+            src="/sparkles_sticker.svg"
+            alt="Sparkles Sticker"
+            width={500}
+            height={500}
+            className="w-full h-auto"
+          />
+        </div>
+
         {/* Afbeelding */}
         <div className="w-[40vw]">
           <Image
