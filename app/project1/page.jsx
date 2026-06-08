@@ -10,6 +10,7 @@ export default function Page4() {
       reverse={false}
       buttons={[
         { text: "website", link: "https://saosphotobooth.vercel.app" },
+        { text: "documentation", link: "/photobooth.pdf" }
       ]}
     />
   );
